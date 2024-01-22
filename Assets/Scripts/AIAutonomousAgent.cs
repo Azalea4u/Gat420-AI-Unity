@@ -40,7 +40,7 @@ public class AIAutonomousAgent : AIAgent
             if (gameObjects.Length > 0)
             {
                 movement.ApplyForce(Cohesion(gameObjects));
-                movement.ApplyForce(Separation(gameObjects, 3));
+                //movement.ApplyForce(Separation(gameObjects, 3));
                 movement.ApplyForce(Alignment(gameObjects));
             }
         }
@@ -53,7 +53,7 @@ public class AIAutonomousAgent : AIAgent
                 Vector3 open = Vector3.zero;
                 if (((AISphereCastPerception)obstaclePerception).GetOpenDirection(ref open))
                 {
-                    movement.ApplyForce(GetSteeringForce(open) * 5);
+                    movement.ApplyForce(GetSteeringForce(open) * 10);
                 }
             }
         }
