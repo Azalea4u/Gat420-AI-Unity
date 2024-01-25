@@ -8,6 +8,9 @@ public class AINavNode : MonoBehaviour
 {
 	[SerializeField] public List<AINavNode> neighbors = new List<AINavNode>();
 
+	public float Cost { get; set; } = float.PositiveInfinity;
+	public AINavNode Parent { get; set; } = null;
+
 	public AINavNode GetRandomNeighbor()
 	{
 		return (neighbors.Count > 0) ? neighbors[Random.Range(0, neighbors.Count)] : null;
